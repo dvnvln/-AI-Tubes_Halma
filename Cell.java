@@ -3,45 +3,67 @@ import java.util.*;
 public class Cell{
     
     //attribute
-    private Point position;
+    //x,y = koordinat
+    //type = tipe cell. 0 = cell biasa, 1 = goal player 1, 2 = goal player 2
+    //pion = ada pion ato engga dan punya siapa. 0 = ga ada pion, 1 = pion player 1, 2 = pion player 2
+    private int x;
+    private int y;
     private int type;
-    private boolean status;
+    private int pion;
 
-    //constructor
-	public Cell(){
-        this.position = new Point();
-        this.type = 0;
-        this.status = false;
-    }
     
-    public Cell(Point position, int type, boolean status){
-        this.position = position;
+
+
+    public Cell(int x, int y, int type, int pion){
+        this.x = x;
+        this.y = y;
         this.type = type;
-        this.status = status;
+        this.pion = pion;
+    }
+
+    public Cell(Cell c){
+        this.x = c.x;
+        this.y = c.y;
+        this.type = c.type;
+        this.pion = c.pion;
     }
 
     //getter & setter
-    private Point getPosition(){
-        return this.position;
+    public int getX(){
+        return this.x;
     }
 
-    private int getType(){
+    public int getY(){
+        return this.y;
+    }
+
+    public int getType(){
         return this.type;
     }
 
-    private boolean getStatus(){
-        return this.status;
+    public int getPion(){
+        return this.pion;
     }
 
-    private void setPosition(Point position){
-        this.position = position;
+    public void setPosition(int x, int y){
+        this.x = x;
+        this.y = y;
     }
 
-    private void setType(int type){
+    public void setType(int type){
         this.type = type;
     }
 
-    private void setStatus(boolean status){
-        this.status = status;
+    public void setPion(int pion){
+        this.pion = pion;
     }
+
+    public boolean isEmpty(){
+        return this.pion == 0;
+    }
+
+    public void print(){
+        System.out.printf("(%d,%d)",y,x);
+    }
+
 }

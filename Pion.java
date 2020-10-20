@@ -1,25 +1,25 @@
 public class Pion{
-    private Point position;
+    private Position position;
     private boolean color;
 
     public Pion(){
-        this.position = new Point();
+        this.position = new Position();
         this.color = false;
     }
 
-    private Point getPosition(){
+    public Position getPosition(){
         return this.position;
     }
 
-    private boolean getColor(){
+    public boolean getColor(){
         return this.color;
     }
 
-    private void setPosition(Point position){
+    public void setPosition(Position position){
         this.position = position;
     }
 
-    private void setColor(boolean color){
+    public void setColor(boolean color){
         this.color = color;
     }
 }
